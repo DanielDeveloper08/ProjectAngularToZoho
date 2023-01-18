@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CustomerI } from './interfaces/clientes.interface';
+import { ClienteService } from './services/cliente.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'zohoAngular';
+
+
+    customers: CustomerI[]=[];
+
+    constructor(private _serviceCliente:ClienteService ){}
+    ngOnInit(): void {
+      this.getCustomers();
+    }
+    getCustomers(){
+      this._serviceCliente
+        .getCustomers()
+        .subscribe( res => {
+          this.customers = res.data;
+        });
+    }
+
 }
+
