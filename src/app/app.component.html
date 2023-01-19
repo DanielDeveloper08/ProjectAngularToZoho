@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<!-- <div class="container mt-5">
     <h1 class="text-center">Listado de clientes</h1>
     <table class="table table-dark table-hover  mt-3 text-center">
         <thead >
@@ -20,18 +20,91 @@
           </tr>
         </tbody>
       </table>
-      <!-- <ngx-charts-pie-chart
-        [view]="view"
-        [scheme]="colorScheme"
-        [results]="single"
-        [gradient]="gradient"
-        [legend]="showLegend"
-        [legendPosition]="legendPosition"
-        [labels]="showLabels"
-        [doughnut]="isDoughnut"
-        (select)="onSelect($event)"
-        (activate)="onActivate($event)"
-        (deactivate)="onDeactivate($event)"
+      
+</div> -->
+
+<div class="container row mx-md-auto my-lg-4 ">
+  <div>
+    <h4 class="">| DASHBOARD</h4>
+  </div>
+  <div class="col-12 d-flex mt-2 gap-4">
+    <div class="card w-50 h-100 shadow bg-body rounded">
+      <div class="card-body position-relative">
+        <p class="bg-warning rounded text-center">Ventas por asesor comercial</p>
+        <ngx-charts-pie-chart class="position-absolute"
+          [view]="view"
+          scheme="fire"
+          [results]="single"
+          [gradient]="gradient"
+          [legend]="showLegend"
+          [labels]="showLabels"
+          [doughnut]="isDoughnut"
+          (select)="onSelect($event)"
+          (activate)="onActivate($event)"
+          (deactivate)="onDeactivate($event)"
         >
-</ngx-charts-pie-chart> -->
+        </ngx-charts-pie-chart>
+      </div>
+    </div>
+    <div class="card w-50 shadow bg-body rounded">
+      <div class="card-body">
+        <p class="bg-warning rounded text-center">Ventas por año en cada país</p>
+        <ngx-charts-area-chart class="d-flex "
+          [view]="view"
+          scheme="fire"
+          [legend]="legend"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxis]="xAxis"
+          [yAxis]="yAxis"
+          [xAxisLabel]="xAxisLabelData"
+          [yAxisLabel]="xAxisLabel"
+          [timeline]="timeline"
+          [results]="multi"
+          (select)="onSelect($event)"
+        >
+        </ngx-charts-area-chart>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 d-flex gap-4 mt-4">
+    <div class="card w-50 shadow bg-body rounded">
+      <div class="card-body">
+        <p class="bg-warning rounded text-center">Ventas por mes</p>
+        <ngx-charts-bar-horizontal
+          [view]="view"
+          scheme="fire"
+          [results]="data"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="xAxisLabel"
+          [yAxisLabel]="yAxisLabel"
+          (select)="onSelect($event)"
+          (activate)="onActivate($event)"
+          (deactivate)="onDeactivate($event)"
+        >
+        </ngx-charts-bar-horizontal>
+      </div>
+    </div>
+    <div class="card w-50 shadow bg-body rounded">
+      <div class="card-body">
+          <p class="bg-warning rounded text-center">Ventas por país</p>
+        <ngx-charts-advanced-pie-chart
+          [view]="view"
+          scheme="fire"
+          [results]="paises"
+          [gradient]="gradient"
+          (select)="onSelect($event)"
+          (activate)="onActivate($event)"
+          (deactivate)="onDeactivate($event)"
+        >
+        </ngx-charts-advanced-pie-chart>
+      </div>
+    </div>
+  </div>
 </div>

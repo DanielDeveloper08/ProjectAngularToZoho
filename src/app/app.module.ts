@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
@@ -12,7 +12,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
   imports: [
     BrowserModule,
     HttpClientModule,
-    NgxChartsModule
+    NgxChartsModule, 
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
