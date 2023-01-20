@@ -240,5 +240,26 @@ export class AppComponent {
   ];
 
 
+
+  //FUNNEL
+
+  chartOptions = {
+	  animationEnabled: true,
+	 
+	  data: [{
+		type: "funnel",
+		indexLabel: "{name}: {y}",
+		valueRepresents: "area",
+		dataPoints: [
+		  { y: 10000, name: "Correo electrónico recibido" },
+		  { y: 2000, name: "Correo electrónico abierto" },
+		  { y: 1500, name: "Sitio web visitado" },
+		  { y: 500, name: "Producto agregado al carrito" },
+		  { y: 250, name: "Compra completada" }
+		]
+	  }]
+	}
+
+
 }
 
